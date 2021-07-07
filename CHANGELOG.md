@@ -1,3 +1,23 @@
+## 3.0.3
+
+* Forced version of flutter_plugin_android_lifecycle to fix errors
+
+## 3.0.2
+
+* Fixed leaked stream bug
+
+## 3.0.1
+
+* Fixed minor bugs
+
+## 3.0.0
+
+* Lots of breaking changes
+* Deprecated APIs
+* Fixed [Issue 231](https://github.com/juicycleff/flutter-unity-view-widget/issues/231)
+* Fixed [Issue 230](https://github.com/juicycleff/flutter-unity-view-widget/issues/230)
+
+
 ## 2.0.0+2
 
 * fixed some bugs
