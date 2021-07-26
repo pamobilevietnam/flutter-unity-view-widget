@@ -120,7 +120,7 @@ extern "C" void UnityQuitCommand()
         dispatch_async(dispatch_get_main_queue(), ^{
             is_unity_unloaded = true;
             [ufw pause:true];
-            [ufw quitApplication:(0)];
+            //[ufw quitApplication:(0)];
         });
     }
 }
@@ -175,7 +175,7 @@ UnityAppController *controller;
     if (UnityIsInited()) {
         dispatch_async(dispatch_get_main_queue(), ^{
             // [ufw unloadApplication];
-            [UnityFrameworkLoad() unloadApplication];
+            //[UnityFrameworkLoad() unloadApplication];
         });
     }
 }
