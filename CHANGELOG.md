@@ -1,3 +1,65 @@
+## 4.1.0
+
+* Fixed bitcode enabled issue on iOS. [369](https://github.com/juicycleff/flutter-unity-view-widget/issues/369)
+
+## 4.0.2
+
+* Fixing project not compiling though to not overriding class member properly. [@xcxooxl](https://github.com/xcxooxl)
+* Removed register-unregister mismatch and removed duplicate calls. [@jakeobrien](https://github.com/jakeobrien)
+* Fix for unityDidUnload callback not firing. [@jakeobrien](https://github.com/jakeobrien)
+* Docs improvement. [@shinriyo](https://github.com/shinriyo)
+
+## 4.0.1+1
+
+* Fix issue with gestureRecogniser being null
+
+## 4.0.1
+
+* Allow optional use of AndroidView over PlatformViewLink on android
+
+## 4.0.0
+
+* Stable release for v4
+
+## 4.0.0-alpha.4
+
+* Fixed ios method channel ID bug
+
+## 4.0.0-alpha.3
+
+* Small improvements
+
+## 4.0.0-alpha.2
+
+* Fixed communication issues on Android
+* Fixed plugin not found on Android
+
+## 4.0.0-alpha.1
+
+* Fixed unload crash on iOS (Requires Unity 2019.4.3 or later)
+* Migrated from Objective-c to Swift for iOS
+* Migrated from Java to Kotlin on Android
+* Fixed issues with channel ID
+* Small bug fixes
+* Improved iOS performance
+* Removed boilerplate code from Android native code
+
+## 3.0.2
+
+* Fixed leaked stream bug
+
+## 3.0.1
+
+* Fixed minor bugs
+
+## 3.0.0
+
+* Lots of breaking changes
+* Deprecated APIs
+* Fixed [Issue 231](https://github.com/juicycleff/flutter-unity-view-widget/issues/231)
+* Fixed [Issue 230](https://github.com/juicycleff/flutter-unity-view-widget/issues/230)
+
+
 ## 2.0.0+2
 
 * fixed some bugs
