@@ -1,27 +1,27 @@
 part of flutter_unity_widget;
 
 class UnityWidget extends StatefulWidget {
-  final UnityWidgetCreatedCallback onUnityViewCreated;
+  final UnityWidgetCreatedCallback? onUnityViewCreated;
 
   ///Event fires when the [UnityWidget] gets a message from unity.
-  final onUnityMessageCallback onUnityMessage;
+  final onUnityMessageCallback? onUnityMessage;
 
   ///Event fires when the [UnityWidget] gets a scene loaded from unity.
-  final onUnitySceneChangeCallback onUnitySceneLoaded;
+  final onUnitySceneChangeCallback? onUnitySceneLoaded;
 
   ///Event fires when the [UnityWidget] gets a message from unity.
-  final onUnityUnloadCallback onUnityUnloaded;
+  final onUnityUnloadCallback? onUnityUnloaded;
 
-  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
-  final bool isARScene;
-  final bool safeMode;
-  final bool fullscreen;
-  final bool enablePlaceholder;
-  final bool disableUnload;
-  final Widget placeholder;
+  final Set<Factory<OneSequenceGestureRecognizer>>? gestureRecognizers;
+  final bool? isARScene;
+  final bool? safeMode;
+  final bool? fullscreen;
+  final bool? enablePlaceholder;
+  final bool? disableUnload;
+  final Widget? placeholder;
 
   UnityWidget({
-    Key key,
+    Key? key,
     @required this.onUnityViewCreated,
     this.onUnityMessage,
     this.isARScene = false,
@@ -41,7 +41,7 @@ class UnityWidget extends StatefulWidget {
 
 class _UnityWidgetState extends State<UnityWidget> {
   final String _viewType = "plugins.xraph.com/unity_view";
-  UnityWidgetController _controller;
+  UnityWidgetController? _controller;
 
   @override
   void initState() {
@@ -57,21 +57,21 @@ class _UnityWidgetState extends State<UnityWidget> {
   void dispose() {
     super.dispose();
     if (_controller != null) {
-      _controller._dispose();
+      _controller!._dispose();
       _controller = null;
     }
   }
 
   createUnity() async {
-    if (!widget.enablePlaceholder) {
-      await _controller.createUnity();
-      await _controller.resume();
+    if (!widget.enablePlaceholder!) {
+      await _controller!.createUnity();
+      await _controller!.resume();
     }
   }
 
   unloadUnity() async {
-    if (!widget.enablePlaceholder) {
-      await _controller.unload();
+    if (!widget.enablePlaceholder!) {
+      await _controller!.unload();
     }
   }
 
@@ -84,7 +84,7 @@ class _UnityWidgetState extends State<UnityWidget> {
       'disableUnload': widget.disableUnload,
     };
 
-    if (widget.enablePlaceholder) {
+    if (widget.enablePlaceholder!) {
       return widget.placeholder ??
           Text('Placeholder mode enabled, no native code will be called');
     }
@@ -122,7 +122,7 @@ class _UnityWidgetState extends State<UnityWidget> {
     }
     _controller = UnityWidgetController.init(id, this);
     if (widget.onUnityViewCreated != null) {
-      widget.onUnityViewCreated(_controller);
+      widget.onUnityViewCreated!(_controller!);
     }
     print('*********************************************');
     print('** flutter unity controller setup complete **');

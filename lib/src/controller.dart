@@ -89,17 +89,17 @@ class UnityWidgetController {
     switch (call.method) {
       case "onUnityMessage":
         if (_unityWidgetState.widget != null) {
-          _unityWidgetState.widget.onUnityMessage(this, call.arguments);
+          _unityWidgetState.widget.onUnityMessage!(this, call.arguments);
         }
         break;
       case "onUnityUnloaded":
         if (_unityWidgetState.widget != null) {
-          _unityWidgetState.widget.onUnityUnloaded(this);
+          _unityWidgetState.widget.onUnityUnloaded!(this);
         }
         break;
       case "onUnitySceneLoaded":
         if (_unityWidgetState.widget != null) {
-          _unityWidgetState.widget.onUnitySceneLoaded(
+          _unityWidgetState.widget.onUnitySceneLoaded!(
             this,
             name: call.arguments['name'],
             buildIndex: call.arguments['buildIndex'],
